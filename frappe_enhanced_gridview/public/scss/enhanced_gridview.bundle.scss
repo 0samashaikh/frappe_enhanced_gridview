@@ -2,15 +2,16 @@
     // overflow-y: auto;
     border: 1px solid var(--table-border-color);
     border-radius: var(--border-radius-md);
-    overflow-x: auto;
     overflow-y: hidden;
-
+    overflow-x: unset !important;
+    
     .form-grid {
         border: none;
         border-radius: unset;
     }
 
     .form-grid.relative-important {
+        overflow-x: auto;
         position: relative !important;
     }
 
@@ -138,17 +139,4 @@
 
         }
     }
-}
-
-/* Lock enhanced grid scroll when row dialog is open */
-.form-grid-container.enhanced-grid-container:has(.grid-row-open) {
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
-    pointer-events: none;
-}
-
-/* Allow interaction inside the opened row form */
-.form-grid-container.enhanced-grid-container:has(.grid-row-open) .form-in-grid,
-.form-grid-container.enhanced-grid-container:has(.grid-row-open) .form-in-grid * {
-    pointer-events: auto;
 }
